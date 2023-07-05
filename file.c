@@ -9,10 +9,10 @@ TST* read_stop_words(char* directory){
 	FILE* input = NULL;
 	char path[300] = "\n";
 	strcat(path,directory);
-	strcat(path,"stopwords.txt");
+	strcat(path,"/stopwords.txt");
 
 	
-
+	printf("%s\n", path);
 	input = fopen(path,"r");
 	if(input == NULL){
 		printf("arquivo nao encontrado\n");

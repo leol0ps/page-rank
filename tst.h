@@ -4,11 +4,6 @@
 #include <string.h>
 #include <stdlib.h>
 #include "list.h"
-typedef struct str{
-	char* c;
-	int len;
-		
-}String;
 void free_string(String* a);
 void cria_string(String* a, char* name);
 typedef struct node TST;

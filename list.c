@@ -1,7 +1,7 @@
 #include "list.h"
 List* create_list(char* name){
 		    List* b = malloc(sizeof(List));
-			cria_String(&(b->name),name);
+			cria_string(&(b->name),name);
 			b->next = NULL;
 			return b;
 }
@@ -28,7 +28,17 @@ void free_list(List* a){
 void print_list(List* a){
 	if(a == NULL)
 		return;
-	printf("%s\n",a->name->c);
+	printf("%s\n",a->name.c);
 	print_list(a->next);
 
+}
+
+void cria_string(String* a, char* name){
+			a->c = malloc(sizeof(strlen(name)+1));
+				a->len = strlen(name);
+}
+void free_string(String* a){
+			if(a == NULL)
+								return;
+				free(a->c);
 }

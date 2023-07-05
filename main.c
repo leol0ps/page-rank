@@ -1,5 +1,5 @@
 #include "file.h"
-#include "TST.h"
+#include "tst.h"
 int main(int argc,char** argv){
 	TST* stopwords = NULL;
 	TST* palavras = NULL;

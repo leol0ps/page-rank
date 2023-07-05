@@ -2,7 +2,14 @@
 #define LIST_H
 #include <stdlib.h>
 #include <stdio.h>
-#include "tst.h"
+#include <string.h>
+typedef struct str{
+		char* c;
+		int len;
+						
+}String;
+void free_string(String* a);
+void cria_string(String* a, char* name);
 typedef struct list{
 			String name;
 		   	struct list* next;

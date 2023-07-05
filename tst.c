@@ -1,13 +1,7 @@
 #include "tst.h"
+TST* create_node(){
 
-void cria_string(String* a, char* name){
-	a->c = malloc(sizeof(strlen(name)+1));
-	a->len = strlen(name);
-}
-void free_string(String* a){
-	if(a == NULL)
-			return;
-	free(a->c);
+	return NULL;
 }
 TST* rec_insert(TST* t, String* key, List* val, int d) {
 		unsigned char c = key->c[d];
