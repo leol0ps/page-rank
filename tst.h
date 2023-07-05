@@ -9,6 +9,8 @@ typedef struct str{
 	int len;
 		
 }String;
+void free_string(String* a);
+void cria_string(String* a, char* name);
 typedef struct node TST;
 struct node {
 		List* val;
@@ -17,7 +19,7 @@ struct node {
 };
 List* TST_search(TST* t, String* key);
 
-TST* TST_insert(TST* t, String* key , Value val);
+TST* TST_insert(TST* t, String* key , List* val);
 void free_tst(TST* a);
 
 #endif

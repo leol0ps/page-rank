@@ -13,7 +13,7 @@ void insert(List* list, char* name ){
 			else{
 				list->next = malloc(sizeof(List));
 				list->next->next = NULL;
-				list->next->name = cria_string(&b->name,name);
+				cria_string(&list->next->name,name);
 			}
 }
 
@@ -21,6 +21,7 @@ void free_list(List* a){
 	 if(a == NULL)
 			 return;
 	 free_list(a->next);
+	 free_string(&a->name);
 	 free(a);
 }
 
