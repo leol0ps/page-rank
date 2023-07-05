@@ -7,7 +7,7 @@
 TST* read_stop_words(char* directory){
 	
 	FILE* input = NULL;
-	char path[300] = "\n";
+	char path[300] = "";
 	strcat(path,directory);
 	strcat(path,"/stopwords.txt");
 
