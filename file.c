@@ -7,8 +7,5 @@ Arb* read_stop_words(char* directory){
 	input = fopen(directory"/stopwords.txt", "r");
 
 
-
-
-
 }
 
