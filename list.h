@@ -9,6 +9,8 @@ typedef struct str{
 						
 }String;
 void free_string(String* a);
+void free_malloc_string(String* a);
+String* cria_string_with_malloc(char* name);
 void cria_string(String* a, char* name);
 typedef struct list{
 			String name;

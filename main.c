@@ -3,8 +3,8 @@
 int main(int argc,char** argv){
 	TST* stopwords = NULL;
 	TST* palavras = NULL;
-	read_all(argv[1],palavras,stopwords);
-
+	read_all(argv[1],palavras,&stopwords);
+	free_tst(stopwords);
 
 	return 0;
 }

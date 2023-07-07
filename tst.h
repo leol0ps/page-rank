@@ -14,7 +14,7 @@ struct node {
 };
 List* TST_search(TST* t, String* key);
 
-TST* TST_insert(TST* t, String* key , List* val);
+TST* TST_insert(TST* t, String* key , char* val);
 void free_tst(TST* a);
 
 #endif

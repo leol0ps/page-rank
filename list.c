@@ -32,10 +32,26 @@ void print_list(List* a){
 	print_list(a->next);
 
 }
-
+String* cria_string_with_malloc(char* name){
+		String* a = malloc(sizeof(String));
+		a->len = strlen(name);
+		a->c = malloc((a->len+1)*sizeof(char));
+		strcpy(a->c,name);
+		return a;
+}
+void free_malloc_string(String* a){
+		if(a == NULL)
+				return;
+		free(a->c);
+		free(a);
+}
 void cria_string(String* a, char* name){
-			a->c = malloc(sizeof(strlen(name)+1));
-				a->len = strlen(name);
+			a->len = strlen(name);
+
+			a->c = malloc((a->len+1)*sizeof(char));
+			printf("len = %d, car = %s\n",a->len,name);
+			strncpy(a->c,name,a->len);
+			a->c[a->len] = '\0';
 }
 void free_string(String* a){
 			if(a == NULL)
