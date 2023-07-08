@@ -6,7 +6,7 @@ int main(int argc,char** argv){
 	String* aux[10];
 	TST* stopwords = NULL;
 	TST* palavras = NULL;
-	read_all(argv[1],palavras,&stopwords);
+	read_all(argv[1],&palavras,&stopwords);
 	char* teste = "euVouAPIZAARIA";
 	String* teste_lowercase = cria_string_with_malloc(teste);
 	lowercase_string(teste_lowercase);
@@ -26,10 +26,12 @@ int main(int argc,char** argv){
 		List* result = TST_search(stopwords, aux[i]);
 		print_list(result);
 	}
+	free_malloc_string(teste_lowercase);
 	for(int i = 0 ; i < 10 ; i++){
 
 		free_malloc_string(aux[i]);
 	}
+	free_tst(palavras);
 	free_tst(stopwords);
 
 	return 0;

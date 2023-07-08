@@ -6,7 +6,7 @@
 #include "tst.h"
 #include "arb.h"
 #include "list.h"
-void read_all(char* directory, TST* pages, TST** stopwords);
+void read_all(char* directory, TST** pages, TST** stopwords);
 TST* read_stop_words(char* directory);
 
 

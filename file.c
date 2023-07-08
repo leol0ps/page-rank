@@ -54,13 +54,16 @@ TST* read_one_page(TST* arvore,char* directory,char* page){
 	}
 
 	while((read = getline(&line,&len,input))!= -1){
-		word = strtok(line,"\n");
-		aux = cria_string_with_malloc(word);
-		lowercase_string(aux);
-		//printf("%s\n", aux->c);
-		arvore = TST_insert(arvore,aux,page);
-		free_malloc_string(aux);
-		aux = NULL;
+			word = strtok(line," \t\n");
+			while(word != NULL){
+				aux = cria_string_with_malloc(word);
+				lowercase_string(aux);
+				//printf("%s\n", aux->c);
+				arvore = TST_insert(arvore,aux,page);
+				free_malloc_string(aux);
+				aux = NULL;
+				word = strtok(NULL," \t\n");
+		}
 	}
 	free(line);
 	fclose(input);
@@ -68,14 +71,14 @@ TST* read_one_page(TST* arvore,char* directory,char* page){
 
 }
 TST* read_pages(char* directory){
-	TST* arvore;
+	TST* arvore = NULL;
 	char* page_name = NULL;
 	char* line= NULL;
 	size_t len = 0;
 	ssize_t read = 0;
 	FILE* input = NULL;
-	FILE* page = NULL;
 	char path[300] = "";
+	char pages_path[306] = "";
 	strcat(path,directory);
 	strcat(path,"/index.txt");
 	input = fopen(path,"r");
@@ -83,15 +86,21 @@ TST* read_pages(char* directory){
 			printf("sem arquivo index\n");
 			return NULL;
 	}
+
+	strcat(pages_path,directory);
+	strcat(pages_path,"/pages");
 	while((read = getline(&line,&len,input))!= -1){
 		page_name = strtok(line, "\n");
-		arvore = read_one_page(arvore,directory,page_name);	
+		arvore = read_one_page(arvore,pages_path,page_name);	
 	}
+	fclose(input);
+	free(line);
 	return arvore;
 }
 
-void read_all(char* directory, TST* pages, TST** stopwords){
+void read_all(char* directory, TST** pages, TST** stopwords){
 
+	*pages = read_pages(directory);
 	*stopwords = read_stop_words(directory);
 	return;
 }
