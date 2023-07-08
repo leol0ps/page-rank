@@ -7,6 +7,9 @@ List* create_list(char* name){
 }
 
 void insert(List* list, char* name ){
+			if(!strcmp(list->name.c,name)){
+					return;
+			}
 			if(list->next!=NULL){
 					insert(list->next,name);
 			}
