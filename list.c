@@ -16,7 +16,11 @@ void insert(List* list, char* name ){
 				cria_string(&list->next->name,name);
 			}
 }
-
+void lowercase_string(String* a){
+		if(a == NULL)
+				return;
+		for(char *p=a->c; *p; p++) *p=tolower(*p);
+}
 void free_list(List* a){
 	 if(a == NULL)
 			 return;

@@ -1,12 +1,16 @@
 #include "file.h"
 #include "list.h"
 #include "tst.h"
+#include <stdatomic.h>
 int main(int argc,char** argv){
 	String* aux[10];
 	TST* stopwords = NULL;
 	TST* palavras = NULL;
 	read_all(argv[1],palavras,&stopwords);
-
+	char* teste = "euVouAPIZAARIA";
+	String* teste_lowercase = cria_string_with_malloc(teste);
+	lowercase_string(teste_lowercase);
+	printf("%s,%s \n",teste,teste_lowercase->c);
 	aux[1] = cria_string_with_malloc("cachorro");
 	aux[2] = cria_string_with_malloc("leao");
 	aux[3] = cria_string_with_malloc("yours");

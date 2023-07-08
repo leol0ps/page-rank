@@ -3,11 +3,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
+
 typedef struct str{
 		char* c;
 		int len;
 						
 }String;
+void lowercase_string(String* a);
 void free_string(String* a);
 void free_malloc_string(String* a);
 String* cria_string_with_malloc(char* name);
