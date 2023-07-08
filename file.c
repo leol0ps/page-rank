@@ -26,7 +26,7 @@ TST* read_stop_words(char* directory){
 	while((read = getline(&line,&len,input))!= -1){
 		word = strtok(line,"\n");
 		aux = cria_string_with_malloc(word);
-		printf("%s\n", aux->c);
+		//printf("%s\n", aux->c);
 		arvore = TST_insert(arvore,aux,"stopwords");
 		free_malloc_string(aux);
 		aux = NULL;

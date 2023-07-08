@@ -49,9 +49,10 @@ void cria_string(String* a, char* name){
 			a->len = strlen(name);
 
 			a->c = malloc((a->len+1)*sizeof(char));
-			printf("len = %d, car = %s\n",a->len,name);
-			strncpy(a->c,name,a->len);
-			a->c[a->len] = '\0';
+			//printf("len = %d, car = %s\n",a->len,name);
+			strcpy(a->c,name);
+			//strncpy(a->c,name,a->len);
+			//a->c[a->len] = '\0';
 }
 void free_string(String* a){
 			if(a == NULL)
