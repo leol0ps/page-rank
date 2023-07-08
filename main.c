@@ -20,12 +20,14 @@ int main(int argc,char** argv){
 	aux[7] = cria_string_with_malloc("againstmy");
 	aux[8] = cria_string_with_malloc("aboutfk");
 	aux[9] = cria_string_with_malloc("naosei");
-	aux[0] = cria_string_with_malloc("anime");
+	aux[0] = cria_string_with_malloc("father");
 	for(int i = 0; i < 10 ; i ++){
 
 		List* result = TST_search(stopwords, aux[i]);
 		print_list(result);
 	}
+	List* search = TST_search(palavras,aux[0]);
+	print_list(search);
 	free_malloc_string(teste_lowercase);
 	for(int i = 0 ; i < 10 ; i++){
 

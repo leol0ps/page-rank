@@ -27,6 +27,7 @@ TST* read_stop_words(char* directory){
 		word = strtok(line,"\n");
 		aux = cria_string_with_malloc(word);
 		//printf("%s\n", aux->c);
+		lowercase_string(aux);
 		arvore = TST_insert(arvore,aux,"stopwords");
 		free_malloc_string(aux);
 		aux = NULL;
@@ -36,7 +37,16 @@ TST* read_stop_words(char* directory){
 	return arvore;
 
 }
-TST* read_one_page(TST* arvore,char* directory,char* page){
+int is_stepword(TST* stp,String* a){
+		List* test = TST_search(stp,a);
+		if(empty_list(test)){
+				return 0;
+		}
+		else {
+			return 1;
+		}
+}
+TST* read_one_page(TST* arvore,TST* stp,char* directory,char* page){
 	char path[300] = "";
 	FILE* input;
 	char* line = NULL;
@@ -59,7 +69,9 @@ TST* read_one_page(TST* arvore,char* directory,char* page){
 				aux = cria_string_with_malloc(word);
 				lowercase_string(aux);
 				//printf("%s\n", aux->c);
-				arvore = TST_insert(arvore,aux,page);
+				if(!is_stepword(stp,aux)){	
+					arvore = TST_insert(arvore,aux,page);
+				}
 				free_malloc_string(aux);
 				aux = NULL;
 				word = strtok(NULL," \t\n");
@@ -70,7 +82,7 @@ TST* read_one_page(TST* arvore,char* directory,char* page){
 	return arvore;
 
 }
-TST* read_pages(char* directory){
+TST* read_pages(char* directory,TST* stp){
 	TST* arvore = NULL;
 	char* page_name = NULL;
 	char* line= NULL;
@@ -91,7 +103,7 @@ TST* read_pages(char* directory){
 	strcat(pages_path,"/pages");
 	while((read = getline(&line,&len,input))!= -1){
 		page_name = strtok(line, "\n");
-		arvore = read_one_page(arvore,pages_path,page_name);	
+		arvore = read_one_page(arvore,stp,pages_path,page_name);	
 	}
 	fclose(input);
 	free(line);
@@ -100,8 +112,8 @@ TST* read_pages(char* directory){
 
 void read_all(char* directory, TST** pages, TST** stopwords){
 
-	*pages = read_pages(directory);
 	*stopwords = read_stop_words(directory);
+	*pages = read_pages(directory,*stopwords);
 	return;
 }
 

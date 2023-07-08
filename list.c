@@ -21,6 +21,12 @@ void lowercase_string(String* a){
 				return;
 		for(char *p=a->c; *p; p++) *p=tolower(*p);
 }
+int empty_list(List* a){
+		if(a == NULL)
+				return 1;
+		else
+				return 0;
+}
 void free_list(List* a){
 	 if(a == NULL)
 			 return;

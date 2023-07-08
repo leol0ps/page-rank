@@ -24,4 +24,5 @@ List* create_list(char* name);
 void insert(List* list, char* name);
 void free_list(List* a);
 void print_list(List* a);
+int empty_list(List* a);
 #endif
