@@ -7,7 +7,7 @@ List* create_list(char* name){
 }
 
 void insert(List* list, char* name ){
-			if(!strcmp(list->name.c,name)){
+			if(!strcmp(list->name.c,name)){ // stops inserting same element in the list
 					return;
 			}
 			if(list->next!=NULL){

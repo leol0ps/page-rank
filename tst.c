@@ -3,6 +3,7 @@ TST* create_node(){
 	TST* a = malloc(sizeof(TST));
 	a->val = NULL;
 	a->c = 'l';
+	a->frequency= 0;
 	a->m = NULL;
 	a->l = NULL;
 	a->r = NULL;
@@ -21,6 +22,7 @@ TST* rec_insert(TST* t, String* key, char* val, int d) {
 			else
 				t->val =  create_list(val);
 		}
+		t->frequency++;
 		return t;
 }
 TST* TST_insert(TST* t, String* key , char* val) {
@@ -56,5 +58,29 @@ void free_tst(TST* a){
 	free_tst(a->r);
 	free(a);
 	}	
+}
+TST* TST_insert_full_list(TST* a, List* list){
+	List* p = list;
+	while(!empty_list(p)){
+		a = TST_insert(a,&p->name," ");	
+	}
+	return a;
+}
+
+TST* rec_freq_search(TST* t, String* key, int d) {
+		if (t == NULL) { return NULL; }
+		unsigned char c = key->c[d];
+		if (c < t->c) { return rec_search(t->l, key, d); }
+		else if (c > t->c) { return rec_search(t->r, key, d); }
+		else if (d < key->len - 1) {
+				return rec_search(t->m, key, d+1);
+		} else { return t; }
+}
+int frequency_return(TST* t, String* key){ // insert in the  list keys with exact n inserts
+	if(t==NULL)
+			return 0;	
+	t = rec_freq_search(t, key, 0);
+	if (t == NULL) { return 0; }
+	else { return t->frequency; }
 }
 
