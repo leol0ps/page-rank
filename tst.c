@@ -62,7 +62,9 @@ void free_tst(TST* a){
 TST* TST_insert_full_list(TST* a, List* list){
 	List* p = list;
 	while(!empty_list(p)){
+		//printf("%s\n",p->name.c);
 		a = TST_insert(a,&p->name," ");	
+		p = p->next;
 	}
 	return a;
 }

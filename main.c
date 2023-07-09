@@ -19,7 +19,7 @@ int main(int argc,char** argv){
 	char* teste = "euVouAPIZAARIA";
 	String* teste_lowercase = cria_string_with_malloc(teste);
 	lowercase_string(teste_lowercase);
-	printf("%s,%s \n",teste,teste_lowercase->c);
+	//printf("%s,%s \n",teste,teste_lowercase->c);
 	aux[1] = cria_string_with_malloc("cachorro");
 	aux[2] = cria_string_with_malloc("leao");
 	aux[3] = cria_string_with_malloc("yours");
@@ -27,16 +27,16 @@ int main(int argc,char** argv){
 	aux[5] = cria_string_with_malloc("above");
 	aux[6] = cria_string_with_malloc("against");
 	aux[7] = cria_string_with_malloc("againstmy");
-	aux[8] = cria_string_with_malloc("aboutfk");
+	aux[8] = cria_string_with_malloc("thing");
 	aux[9] = cria_string_with_malloc("naosei");
 	aux[0] = cria_string_with_malloc("chapter");
-	for(int i = 0; i < 10 ; i ++){
+	for(int i = 8; i < 10 ; i ++){
 
 		List* result = TST_search(stopwords, aux[i]);
-		print_list(result);
+		//print_list(result);
 	}
 	List* search = TST_search(palavras,aux[0]);
-	print_list(search);
+	//print_list(search);
 	free_malloc_string(teste_lowercase);
 	for(int i = 0 ; i < 10 ; i++){
 
@@ -47,6 +47,7 @@ int main(int argc,char** argv){
 		print_list(result_search);
 		//int words_line = count_words(line);
 		count_stdin_lines++;
+		free(result_search);
 		//printf("%d words in line %d\n",words_line,count_stdin_lines);
 	}
 	free(line);
