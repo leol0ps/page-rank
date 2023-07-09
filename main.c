@@ -47,7 +47,7 @@ int main(int argc,char** argv){
 		print_list(result_search);
 		//int words_line = count_words(line);
 		count_stdin_lines++;
-		free(result_search);
+		free_list(result_search);
 		//printf("%d words in line %d\n",words_line,count_stdin_lines);
 	}
 	free(line);
