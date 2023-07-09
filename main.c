@@ -3,6 +3,7 @@
 #include "file.h"
 #include "list.h"
 #include "tst.h"
+#include "pagerank.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <complex.h>
@@ -13,9 +14,10 @@ int main(int argc,char** argv){
 	size_t len = 0;
 	ssize_t read = 0;
 	TST* stopwords = NULL;
-	int count_stdin_lines = 0;
 	TST* palavras = NULL;
-	read_all(argv[1],&palavras,&stopwords);
+	PTST* ranks = NULL ;
+	int count_stdin_lines = 0;
+	read_all(argv[1],&palavras,&stopwords,&ranks);
 	char* teste = "euVouAPIZAARIA";
 	String* teste_lowercase = cria_string_with_malloc(teste);
 	lowercase_string(teste_lowercase);
@@ -51,6 +53,7 @@ int main(int argc,char** argv){
 		//printf("%d words in line %d\n",words_line,count_stdin_lines);
 	}
 	free(line);
+	free_PTST(ranks);
 	free_tst(palavras);
 	free_tst(stopwords);
 

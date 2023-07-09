@@ -109,9 +109,72 @@ TST* read_pages(char* directory,TST* stp){
 	free(line);
 	return arvore;
 }
-
-void read_all(char* directory, TST** pages, TST** stopwords){
-
+PTST* read_graph(char* directory){
+	char path[300] = "";
+	FILE* input;
+	int count = 0;
+	int i = 0;
+	int link_count = 0;
+	char** links = NULL;
+	char* line = NULL;
+	char* word = NULL;
+	char* page_name = NULL;
+	size_t len = 0;
+	ssize_t read = 0;
+	String* aux =  NULL;
+	strcat(path,directory);
+	strcat(path,"/graph.txt");
+	input = fopen(path,"r");
+	PTST* graph = NULL;
+	if(input == NULL){
+			printf("graph.txt nao encontrado");
+			return NULL;
+	}	
+	while((read = getline(&line,&len,input)) != -1 ){
+		word = strtok(line," \t\n");
+		while(word!= NULL){
+			if(count == 0){
+				page_name = malloc((strlen(word)+1)*sizeof(char));
+				strcpy(page_name,word);
+				count++;
+			}
+			else if(count == 1){
+				link_count = atoi(word);
+				links = malloc(link_count*sizeof(char*));
+				count++;	
+			}
+			else{
+				int size = strlen(word) + 1;
+				char* link_name = malloc(size*sizeof(char));
+				strcpy(link_name,word);
+				links[i] = link_name;
+				i++;
+				link_name = NULL;
+			}
+			
+			
+			word = strtok(NULL," \t\n");
+		}
+		printf("%d  ",link_count);
+		printf("%s\n",page_name);
+		Dat* data = create_dat(links,0, link_count);
+		aux = cria_string_with_malloc(page_name);
+		lowercase_string(aux);
+		graph = PTST_insert(graph,aux,data);
+		free(page_name);
+		free_malloc_string(aux);
+		aux = NULL;
+		page_name = NULL;
+		links = NULL;
+		count = 0;
+		i = 0;		
+	}
+	fclose(input);
+	free(line);
+	return graph;
+}
+void read_all(char* directory, TST** pages, TST** stopwords,PTST** ranks){
+	*ranks  = read_graph(directory);
 	*stopwords = read_stop_words(directory);
 	*pages = read_pages(directory,*stopwords);
 	return;

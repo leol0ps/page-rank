@@ -6,7 +6,8 @@
 #include "tst.h"
 #include "arb.h"
 #include "list.h"
-void read_all(char* directory, TST** pages, TST** stopwords);
+#include "pagerank.h"
+void read_all(char* directory, TST** pages, TST** stopwords,PTST** ranks);
 TST* read_stop_words(char* directory);
 
 
