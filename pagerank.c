@@ -123,7 +123,7 @@ void init_rank(PTST* a, String* key, double val){
 	modify_rank(b,val);
 }
 void inicializa_ranks(PTST* a, String* pages, int size){
-		double init = (1.0-ALPHA)/size;
+		double init = (1.0-ALPHA)/(double)size;
 		for(int i = 0; i < size; i++){
 			init_rank(a,&pages[i],init);
 		}
@@ -131,12 +131,13 @@ void inicializa_ranks(PTST* a, String* pages, int size){
 void pr_update(PTST* a, String* key,int size){
 		Dat* b = search_ptst(a,key);
 		double aux = 0;
+		Dat* s = NULL;
 		double somatorio = 0;
 		int out_j;
 		List* p = b->lin;
 		while(p != NULL){
-			aux += get_pagerank(a,&p->name,&out_j);
-			somatorio = aux/(double)out_j;	
+			s = search_ptst(a,&p->name);
+			somatorio += s->old_rank/(double)s->out_count;	
 			p = p->next;
 		}
 
@@ -159,13 +160,14 @@ double sum_pr(PTST* a, String* pages,int size){
 	double sum = 0;
 	for(int i = 0 ; i < size; i++ ){
 			Dat* x = search_ptst(a,&pages[i]);
-		   	sum += x->rank - x->old_rank;	
+		   	sum += x->rank - x->old_rank;
+			printf("sum %lf\n ",sum);	
 	}
 	return sum;
 }
 void calculate_pagerank(PTST* a, String* pages, int size){
 	inicializa_ranks(a,pages,size);
-	printf("%lf", E);
+	printf("%lf\n", E);
 	double erro = 1000;
 	double novo = INFINITY;
 	double old = 0;
