@@ -6,8 +6,9 @@
 
 
 typedef struct data{
-		char** links;
-		int link_count;
+		List* lin;
+		int in_count;
+		int out_count;
 		double rank;
 }Dat;
 
@@ -15,9 +16,10 @@ typedef struct nodep PTST;
 double get_pagerank(PTST* t,String* key);
 double get_dat_rank(Dat *a);
 void modify_rank(Dat* a, double val);
-Dat* create_dat(char** links, double init_val, int link_count);
+void create_dat(Dat* newdata, double init_val, int link_count);
 void free_dat(Dat* a);
-PTST* PTST_insert(PTST* t, String* key , Dat* val);
+PTST* PTST_insert(PTST* t, String* key , char* val);
+PTST* out_count_insert(PTST* t, String* key, int val);
 Dat* search_ptst(PTST* t, String* key);
 void free_PTST(PTST* a);
 #endif

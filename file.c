@@ -82,7 +82,7 @@ TST* read_one_page(TST* arvore,TST* stp,char* directory,char* page){
 	return arvore;
 
 }
-TST* read_pages(char* directory,TST* stp){
+TST* read_pages(char* directory,TST* stp,int* page_count,char*** str_pages){
 	TST* arvore = NULL;
 	char* page_name = NULL;
 	char* line= NULL;
@@ -91,6 +91,9 @@ TST* read_pages(char* directory,TST* stp){
 	FILE* input = NULL;
 	char path[300] = "";
 	char pages_path[306] = "";
+	char** pages = NULL;
+	int count_pages = 0;
+	List* temp = NULL;
 	strcat(path,directory);
 	strcat(path,"/index.txt");
 	input = fopen(path,"r");
@@ -103,8 +106,26 @@ TST* read_pages(char* directory,TST* stp){
 	strcat(pages_path,"/pages");
 	while((read = getline(&line,&len,input))!= -1){
 		page_name = strtok(line, "\n");
-		arvore = read_one_page(arvore,stp,pages_path,page_name);	
+		arvore = read_one_page(arvore,stp,pages_path,page_name);
+		if(count_pages == 0){
+			temp = create_list(page_name);	
+		}
+		else{
+			insert(temp,page_name);	
+		}	
+		count_pages++;
 	}
+	pages = malloc(count_pages*sizeof(char*));
+	List* p = temp;
+	for(int i = 0; i < count_pages; i++){
+		pages[i] = malloc((p->name.len+1)*sizeof(char));
+		strcpy(pages[i],p->name.c);
+		p = p->next;
+		printf("%d %s\n", i,pages[i]);
+	}
+	*page_count = count_pages;
+	*str_pages = pages;
+	free_list(temp);
 	fclose(input);
 	free(line);
 	return arvore;
@@ -140,16 +161,17 @@ PTST* read_graph(char* directory){
 			}
 			else if(count == 1){
 				link_count = atoi(word);
-				links = malloc(link_count*sizeof(char*));
-				count++;	
+				aux = cria_string_with_malloc(page_name);
+				graph = out_count_insert(graph,aux,link_count);
+				count++;
+				free_malloc_string(aux);
+				aux = NULL;	
 			}
 			else{
-				int size = strlen(word) + 1;
-				char* link_name = malloc(size*sizeof(char));
-				strcpy(link_name,word);
-				links[i] = link_name;
-				i++;
-				link_name = NULL;
+				aux = cria_string_with_malloc(word);
+				graph = PTST_insert(graph,aux,page_name);
+				free_malloc_string(aux);
+				aux = NULL;
 			}
 			
 			
@@ -157,12 +179,8 @@ PTST* read_graph(char* directory){
 		}
 		printf("%d  ",link_count);
 		printf("%s\n",page_name);
-		Dat* data = create_dat(links,0, link_count);
-		aux = cria_string_with_malloc(page_name);
-		lowercase_string(aux);
-		graph = PTST_insert(graph,aux,data);
 		free(page_name);
-		free_malloc_string(aux);
+		//free_malloc_string(aux);
 		aux = NULL;
 		page_name = NULL;
 		links = NULL;
@@ -173,10 +191,10 @@ PTST* read_graph(char* directory){
 	free(line);
 	return graph;
 }
-void read_all(char* directory, TST** pages, TST** stopwords,PTST** ranks){
+void read_all(char* directory, TST** pages, TST** stopwords,PTST** ranks,int* count_pages,char*** str_pages){
 	*ranks  = read_graph(directory);
 	*stopwords = read_stop_words(directory);
-	*pages = read_pages(directory,*stopwords);
+	*pages = read_pages(directory,*stopwords,count_pages,str_pages);
 	return;
 }
 

@@ -16,8 +16,10 @@ int main(int argc,char** argv){
 	TST* stopwords = NULL;
 	TST* palavras = NULL;
 	PTST* ranks = NULL ;
+	char** str_pages = NULL;
+	int count_pages = 0;
 	int count_stdin_lines = 0;
-	read_all(argv[1],&palavras,&stopwords,&ranks);
+	read_all(argv[1],&palavras,&stopwords,&ranks,&count_pages,&str_pages);
 	char* teste = "euVouAPIZAARIA";
 	String* teste_lowercase = cria_string_with_malloc(teste);
 	lowercase_string(teste_lowercase);
