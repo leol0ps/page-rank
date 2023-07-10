@@ -9,7 +9,7 @@
 #include "pagerank.h"
 void read_all(char* directory, TST** pages, TST** stopwords,PTST** ranks,int* count_pages, String** str_pages);
 TST* read_stop_words(char* directory);
-
+void print_output(List* result,PTST* a);
 
 
 

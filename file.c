@@ -197,3 +197,42 @@ void read_all(char* directory, TST** pages, TST** stopwords,PTST** ranks,int* co
 	return;
 }
 
+typedef struct conj {
+		String* a;
+		double val;
+}Conj;
+int order_conj(const void * a,
+     const void * b) {
+     Conj * x = * (Conj ** ) a;
+     Conj * y = * (Conj ** ) b;
+     if (x -> val > y -> val)
+       return 1;
+     else if (x -> val < y -> val) {
+       return -1;
+     } else {
+       return strcmp(x -> a -> c, y -> a -> c);
+     }
+}
+void print_output(List * result, PTST * a) {
+    int count = 0;
+    int inutil = 0;
+    List * p = result;
+    while (p != NULL) {
+      count++;
+      p = p -> next;
+    }
+    if (count == 0) {
+      return;
+    }
+    Conj * junt = malloc(count * sizeof(Conj));
+    p = result;
+    for (int i = 0; i < count; i++) {
+      junt[i].a = & p -> name;
+      junt[i].val = get_pagerank(a, junt[i].a, & inutil);
+    }
+    qsort(junt, count, sizeof(Conj * ), order_conj);
+    printf("results\n\n\n\n");
+    for (int i = 0; i < count; i++) {
+      printf("%lf %s\n", junt[i].val, junt[i].a -> c);
+    }
+}

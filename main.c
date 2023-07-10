@@ -54,11 +54,12 @@ int main(int argc,char** argv){
 		List* result_search = search_eng(palavras,stopwords,line);
 		print_list(result_search);
 		List* ca = result_search;
-		while(ca!=NULL){
+		/*while(ca!=NULL){
 			printf("%lf\n",get_pagerank(ranks,&ca->name,&inutil));
 			ca = ca->next;
-		}
-		//int words_line = count_words(line);
+		}*/
+		print_output( ca,ranks);
+		int words_line = count_words(line);
 		count_stdin_lines++;
 		free_list(result_search);
 		free(print_search);
