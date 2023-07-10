@@ -7,7 +7,7 @@
 #include "arb.h"
 #include "list.h"
 #include "pagerank.h"
-void read_all(char* directory, TST** pages, TST** stopwords,PTST** ranks,int* count_pages, char*** str_pages);
+void read_all(char* directory, TST** pages, TST** stopwords,PTST** ranks,int* count_pages, String** str_pages);
 TST* read_stop_words(char* directory);
 
 

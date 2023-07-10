@@ -16,10 +16,12 @@ int main(int argc,char** argv){
 	TST* stopwords = NULL;
 	TST* palavras = NULL;
 	PTST* ranks = NULL ;
-	char** str_pages = NULL;
+	String* str_pages = NULL;
+	int inutil =0;
 	int count_pages = 0;
 	int count_stdin_lines = 0;
 	read_all(argv[1],&palavras,&stopwords,&ranks,&count_pages,&str_pages);
+	calculate_pagerank(ranks,str_pages,count_pages);
 	char* teste = "euVouAPIZAARIA";
 	String* teste_lowercase = cria_string_with_malloc(teste);
 	lowercase_string(teste_lowercase);
@@ -47,17 +49,30 @@ int main(int argc,char** argv){
 		free_malloc_string(aux[i]);
 	}
 	while((read = getline(&line,&len,stdin))!= -1){
+		char* print_search = malloc((len+1)*sizeof(char));
+		strcpy(print_search,line);
 		List* result_search = search_eng(palavras,stopwords,line);
 		print_list(result_search);
+		List* ca = result_search;
+		while(ca!=NULL){
+			printf("%lf\n",get_pagerank(ranks,&ca->name,&inutil));
+			ca = ca->next;
+		}
 		//int words_line = count_words(line);
 		count_stdin_lines++;
 		free_list(result_search);
+		free(print_search);
+		print_search = NULL;
 		//printf("%d words in line %d\n",words_line,count_stdin_lines);
 	}
 	free(line);
 	free_PTST(ranks);
 	free_tst(palavras);
 	free_tst(stopwords);
+	for(int i = 0; i < count_pages;i++){
+			free_string(&str_pages[i]);
+	}
+	free(str_pages);
 
 	return 0;
 }

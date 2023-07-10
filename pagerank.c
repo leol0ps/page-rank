@@ -1,5 +1,7 @@
 #include "pagerank.h"
-#define episolon 100
+#include "list.h"
+#define ALPHA 0.85
+#define E 10e-9
 struct nodep{
 	Dat content;
 	unsigned char c;
@@ -18,9 +20,12 @@ void create_dat( Dat* newdat,double init_val, int link_count){
 		newdat->lin = NULL;
 		newdat->out_count = link_count;
 		newdat->rank = init_val;
+		newdat->old_rank = 0;
+		newdat->in_count = 0;
 }
 void modify_rank(Dat* a, double val){
 		a->rank = val;
+		a->old_rank = val;
 }
 double get_dat_rank(Dat* a){
 	return a->rank;
@@ -107,23 +112,68 @@ void free_PTST(PTST *a){
 	free(a);
 }
 
-double get_pagerank(PTST* t, String* key){
+double get_pagerank(PTST* t, String* key, int* out_j){
 	Dat* d = search_ptst(t,key);
+	*out_j = d->out_count;
 	return get_dat_rank(d);
 }
-void update_rank(PTST* a, String* key, double val){
+void init_rank(PTST* a, String* key, double val){
 
 	Dat* b = search_ptst(a,key);
 	modify_rank(b,val);
 }
 void inicializa_ranks(PTST* a, String* pages, int size){
-		double init = 1.0/size;
+		double init = (1.0-ALPHA)/size;
 		for(int i = 0; i < size; i++){
-			update_rank(a,&pages[i],init);
+			init_rank(a,&pages[i],init);
 		}
+}
+void pr_update(PTST* a, String* key,int size){
+		Dat* b = search_ptst(a,key);
+		double aux = 0;
+		double somatorio = 0;
+		int out_j;
+		List* p = b->lin;
+		while(p != NULL){
+			aux += get_pagerank(a,&p->name,&out_j);
+			somatorio = aux/(double)out_j;	
+			p = p->next;
+		}
+
+		aux = b->rank;
+		if(b->out_count == 0){
+			b->rank = (1-ALPHA)/size + ALPHA*somatorio;	
+		}
+		else{
+			b->rank = (1-ALPHA)/size + ALPHA*b->old_rank + ALPHA*somatorio;
+		}
+		b->old_rank = aux;
+}
+void update_ranks(PTST* a, String* pages, int size){
+	for(int i = 0; i < size; i++){
+			pr_update(a,&pages[i],size);
+	}	
+}
+double sum_pr(PTST* a, String* pages,int size){
+	int out;
+	double sum = 0;
+	for(int i = 0 ; i < size; i++ ){
+			Dat* x = search_ptst(a,&pages[i]);
+		   	sum += x->rank - x->old_rank;	
+	}
+	return sum;
 }
 void calculate_pagerank(PTST* a, String* pages, int size){
 	inicializa_ranks(a,pages,size);
-		
+	printf("%lf", E);
+	double erro = 1000;
+	double novo = INFINITY;
+	double old = 0;
+	while(erro > E){
+		update_ranks(a,pages,size);
+		novo = sum_pr(a,pages,size);
+		erro = (1.0/(double)size)*fabs(novo);
+		printf("%lf\n", erro);
+	}	
 	
 }

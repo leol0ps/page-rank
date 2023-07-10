@@ -82,7 +82,7 @@ TST* read_one_page(TST* arvore,TST* stp,char* directory,char* page){
 	return arvore;
 
 }
-TST* read_pages(char* directory,TST* stp,int* page_count,char*** str_pages){
+TST* read_pages(char* directory,TST* stp,int* page_count,String** str_pages){
 	TST* arvore = NULL;
 	char* page_name = NULL;
 	char* line= NULL;
@@ -91,7 +91,7 @@ TST* read_pages(char* directory,TST* stp,int* page_count,char*** str_pages){
 	FILE* input = NULL;
 	char path[300] = "";
 	char pages_path[306] = "";
-	char** pages = NULL;
+	String* pages = NULL;
 	int count_pages = 0;
 	List* temp = NULL;
 	strcat(path,directory);
@@ -115,13 +115,12 @@ TST* read_pages(char* directory,TST* stp,int* page_count,char*** str_pages){
 		}	
 		count_pages++;
 	}
-	pages = malloc(count_pages*sizeof(char*));
+	pages = malloc(count_pages*sizeof(String));
 	List* p = temp;
 	for(int i = 0; i < count_pages; i++){
-		pages[i] = malloc((p->name.len+1)*sizeof(char));
-		strcpy(pages[i],p->name.c);
+		cria_string(&pages[i],p->name.c);
 		p = p->next;
-		printf("%d %s\n", i,pages[i]);
+		printf("%d %s\n", i,pages[i].c);
 	}
 	*page_count = count_pages;
 	*str_pages = pages;
@@ -191,7 +190,7 @@ PTST* read_graph(char* directory){
 	free(line);
 	return graph;
 }
-void read_all(char* directory, TST** pages, TST** stopwords,PTST** ranks,int* count_pages,char*** str_pages){
+void read_all(char* directory, TST** pages, TST** stopwords,PTST** ranks,int* count_pages,String** str_pages){
 	*ranks  = read_graph(directory);
 	*stopwords = read_stop_words(directory);
 	*pages = read_pages(directory,*stopwords,count_pages,str_pages);
