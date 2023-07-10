@@ -3,25 +3,27 @@
 #define ALPHA 0.85
 #define E 10e-9
 struct nodep{
-	Dat content;
+	Dat* content;
 	unsigned char c;
 	PTST *l, *m , *r;
 };
 PTST* create_nodep(){
 	PTST* a = malloc(sizeof(PTST));
-	create_dat(&a->content,0,0);
+	a->content = NULL;
 	a->c = 'l';
 	a->l = NULL;
 	a->m = NULL;
 	a->r = NULL;
 	return a;
 }
-void create_dat( Dat* newdat,double init_val, int link_count){
+Dat* create_dat(){
+		Dat* newdat = malloc(sizeof(Dat));
 		newdat->lin = NULL;
-		newdat->out_count = link_count;
-		newdat->rank = init_val;
+		newdat->out_count = 0;
+		newdat->rank = 0;
 		newdat->old_rank = 0;
 		newdat->in_count = 0;
+		return newdat;
 }
 void modify_rank(Dat* a, double val){
 		a->rank = val;
@@ -45,14 +47,17 @@ PTST* page_rec_insert(PTST* t, String* key, char* val, int d) {
 		else if (d < key->len - 1) {
 				t->m = page_rec_insert(t->m, key, val, d+1);
 		} else {
-			if(t->content.lin == NULL){
-					t->content.lin = create_list(val);
+			if(t->content == NULL){
+				t->content = create_dat();
+				t->content->in_count++;
+			}
+			else if(t->content->lin == NULL){
+				t->content->lin = create_list(val);
 			}
 			else{
-				insert(t->content.lin,val);
-
+				insert(t->content->lin,val);
+				t->content->in_count++;
 			}
-			t->content.in_count++;
 		}
 		return t;
 }
@@ -65,7 +70,10 @@ PTST*  out_count_page_rec_insert(PTST* t, String* key, int val, int d) {
 		else if (d < key->len - 1) {
 				t->m = out_count_page_rec_insert(t->m, key, val, d+1);
 		} else {
-			t->content.out_count = val;
+			if(t->content == NULL){
+				t->content = create_dat();	
+			}
+			t->content->out_count = val;
 		}
 		return t;
 }
@@ -98,14 +106,14 @@ PTST* page_rec_search(PTST* t, String* key, int d){
 Dat* search_ptst(PTST *t, String* key){
 	t = page_rec_search(t,key,0);
 	if(t == NULL){ return NULL;}
-	else {return &t->content;}
+	else {return t->content;}
 
 }
 
 void free_PTST(PTST *a){
 	if( a == NULL)
 			return;
-	free_list(a->content.lin);
+	free_dat(a->content);
 	free_PTST(a->l);
 	free_PTST(a->m);
 	free_PTST(a->r);

@@ -18,7 +18,7 @@ typedef struct nodep PTST;
 double get_pagerank(PTST* t,String* key, int* out_j);
 double get_dat_rank(Dat *a);
 void modify_rank(Dat* a, double val);
-void create_dat(Dat* newdata, double init_val, int link_count);
+Dat* create_dat();
 void free_dat(Dat* a);
 PTST* PTST_insert(PTST* t, String* key , char* val);
 PTST* out_count_insert(PTST* t, String* key, int val);
