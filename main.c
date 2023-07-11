@@ -52,12 +52,13 @@ int main(int argc,char** argv){
 		char* print_search = malloc((len+1)*sizeof(char));
 		strcpy(print_search,line);
 		List* result_search = search_eng(palavras,stopwords,line);
-		print_list(result_search);
+		//print_list(result_search);
 		List* ca = result_search;
 		/*while(ca!=NULL){
 			printf("%lf\n",get_pagerank(ranks,&ca->name,&inutil));
 			ca = ca->next;
 		}*/
+		printf("search:%s",print_search);
 		print_output( ca,ranks);
 		int words_line = count_words(line);
 		count_stdin_lines++;

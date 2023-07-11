@@ -17,7 +17,7 @@ TST* read_stop_words(char* directory){
 	strcat(path,"/stopwords.txt");
 
 	
-	printf("%s\n", path);
+	//printf("%s\n", path);
 	input = fopen(path,"r");
 	if(input == NULL){
 		printf("arquivo nao encontrado\n");
@@ -120,7 +120,7 @@ TST* read_pages(char* directory,TST* stp,int* page_count,String** str_pages){
 	for(int i = 0; i < count_pages; i++){
 		cria_string(&pages[i],p->name.c);
 		p = p->next;
-		printf("%d %s\n", i,pages[i].c);
+		//printf("%d %s\n", i,pages[i].c);
 	}
 	*page_count = count_pages;
 	*str_pages = pages;
@@ -176,8 +176,8 @@ PTST* read_graph(char* directory){
 			
 			word = strtok(NULL," \t\n");
 		}
-		printf("%d  ",link_count);
-		printf("%s\n",page_name);
+		//printf("%d  ",link_count);
+		//printf("%s\n",page_name);
 		free(page_name);
 		//free_malloc_string(aux);
 		aux = NULL;
@@ -216,23 +216,30 @@ int order_conj(const void * a,
 void print_output(List * result, PTST * a) {
     int count = 0;
     int inutil = 0;
+	Conj* junt = NULL;
     List * p = result;
     while (p != NULL) {
       count++;
       p = p -> next;
     }
-    if (count == 0) {
-      return;
-    }
-    Conj * junt = malloc(count * sizeof(Conj));
+	if(count!=0){
+    	 junt = malloc(count * sizeof(Conj));
+	}
     p = result;
     for (int i = 0; i < count; i++) {
       junt[i].a = & p -> name;
       junt[i].val = get_pagerank(a, junt[i].a, & inutil);
     }
+	printf("pages:");
     qsort(junt, count, sizeof(Conj * ), order_conj);
-    printf("results\n\n\n\n");
+	for(int i = 0; i < count; i++){
+			printf("%s ",junt[i].a->c);
+	}
+	printf("\npr:");
     for (int i = 0; i < count; i++) {
-      printf("%lf %s\n", junt[i].val, junt[i].a -> c);
+      printf("%lf ", junt[i].val);
     }
+	printf("\n");
+	free(junt);
+
 }

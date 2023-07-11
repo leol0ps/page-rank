@@ -10,7 +10,7 @@ int is_stepword_s(TST* stp,String* a){
 	}
 }
 List* list_intersection(List** a, int n){
-	printf("n = %d\n",n);
+	//printf("n = %d\n",n);
 	TST* result_tree = NULL;
 	List* complete  = NULL;
 	for(int i = 0; i < n; i++){
@@ -34,20 +34,20 @@ List* list_intersection(List** a, int n){
 	return complete;
 }
 List* search_eng(TST* palavras, TST* stp, char* search_words){
-	printf("%s\n", search_words);
+	//printf("%s\n", search_words);
 	List* result = NULL;
 	String* aux;
 	char* word = NULL;
 	int number_of_stepwords = 0;
-	char new_buffer[200];
+	//char new_buffer[200];
+	char* new_buffer = malloc((strlen(search_words)+1)*sizeof(char));
    	strcpy(new_buffer,search_words);	
 	int number_of_searches = count_words(new_buffer);
 	int word_count = 0;
 	List** search_results = malloc(number_of_searches*sizeof(List*));
-	printf("passou auqui\n");
 	word = strtok(search_words," \t\n");
 	while(word!=NULL){
-			printf("%s\n",word);
+		//	printf("%s\n",word);
 			aux = cria_string_with_malloc(word);
 			lowercase_string(aux);
 			if(!is_stepword_s(stp,aux)){
@@ -62,9 +62,10 @@ List* search_eng(TST* palavras, TST* stp, char* search_words){
 			aux = NULL;
 			word = strtok(NULL," \t\n"); 
 	}
-	printf("word_count = %d\nsearch words = %s\nstopwords = %d, entradas = %d\n",word_count,word,number_of_stepwords,number_of_searches);
+//	printf("word_count = %d\nsearch words = %s\nstopwords = %d, entradas = %d\n",word_count,word,number_of_stepwords,number_of_searches);
 	result = list_intersection(search_results,word_count);
 	free(search_results);
+	free(new_buffer);
 	return result;
 }
 int count_words(char* line){

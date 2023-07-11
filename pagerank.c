@@ -167,7 +167,7 @@ double sum_pr(PTST* a, String* pages,int size){
 }
 void calculate_pagerank(PTST* a, String* pages, int size){
 	inicializa_ranks(a,pages,size);
-	printf("%lf\n", E);
+	//printf("%lf\n", E);
 	double constant = 1.0/(double)size;
 	double erro = 1000;
 	double novo = INFINITY;
@@ -176,7 +176,7 @@ void calculate_pagerank(PTST* a, String* pages, int size){
 		update_ranks(a,pages,size);
 		novo = sum_pr(a,pages,size);
 		erro = constant*fabs(novo);
-		printf("%lf\n", erro);
+	//	printf("%lf\n", erro);
 	}	
 	
 }
