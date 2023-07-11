@@ -1,0 +1,90 @@
+search:heir God
+pages:micah.txt proverbs.txt romans.txt galatians.txt genesis.txt hebrews.txt IISamuel.txt jeremiah.txt 
+pr:0.003885 0.012124 0.014404 0.009982 0.037250 0.007839 0.004642 0.004961 
+search:Israel King
+pages:luke.txt malachi.txt matthew.txt micah.txt nahum.txt nehemiah.txt numbers.txt proverbs.txt psalms.txt songOfSongs.txt zechariah.txt zephaniah.txt acts.txt amos.txt daniel.txt deuteronomy.txt ecclesiastes.txt esther.txt exodus.txt ezekiel.txt ezra.txt genesis.txt haggai.txt hebrews.txt hosea.txt IChronicles.txt IIChronicles.txt IIcorinthians.txt IIKings.txt IISamuel.txt IKings.txt ISamuel.txt jeremiah.txt job.txt jonah.txt joshua.txt judges.txt lamentations.txt 
+pr:0.062741 0.002381 0.029954 0.003885 0.009745 0.002381 0.023741 0.012124 0.037150 0.010639 0.015811 0.002381 0.010106 0.009108 0.023918 0.021402 0.021087 0.006548 0.019919 0.013155 0.007034 0.037250 0.008590 0.007839 0.010524 0.026222 0.011355 0.007607 0.010577 0.004642 0.027953 0.006832 0.004961 0.017363 0.022816 0.011256 0.022480 0.018399 
+search:angel son
+pages:luke.txt matthew.txt numbers.txt psalms.txt revelation.txt zechariah.txt acts.txt daniel.txt exodus.txt galatians.txt genesis.txt IChronicles.txt IIcorinthians.txt IIKings.txt IISamuel.txt IKings.txt ISamuel.txt john.txt judges.txt 
+pr:0.062741 0.029954 0.023741 0.037150 0.021539 0.015811 0.010106 0.023918 0.019919 0.009982 0.037250 0.026222 0.007607 0.010577 0.004642 0.027953 0.006832 0.035552 0.022480 
+search:children father
+pages:leviticus.txt luke.txt mark.txt matthew.txt numbers.txt peter.txt peter2.txt philippians.txt proverbs.txt psalms.txt revelation.txt romans.txt timothy.txt titus.txt zechariah.txt acts.txt amos.txt daniel.txt deuteronomy.txt ephesians.txt esther.txt exodus.txt ezekiel.txt genesis.txt hebrews.txt hosea.txt IChronicles.txt IIChronicles.txt Icorinthians.txt IIcorinthians.txt IIJohn.txt IIKings.txt IISamuel.txt IJohn.txt IKings.txt ISamuel.txt jeremiah.txt job.txt john.txt joshua.txt judges.txt 
+pr:0.023577 0.062741 0.035362 0.029954 0.023741 0.032874 0.015382 0.005285 0.012124 0.037150 0.021539 0.014404 0.019060 0.002381 0.015811 0.010106 0.009108 0.023918 0.021402 0.013581 0.006548 0.019919 0.013155 0.037250 0.007839 0.010524 0.026222 0.011355 0.008527 0.007607 0.021296 0.010577 0.004642 0.020872 0.027953 0.006832 0.004961 0.017363 0.035552 0.011256 0.022480 
+search:Lord sons hand day
+pages:leviticus.txt luke.txt mark.txt matthew.txt micah.txt numbers.txt proverbs.txt psalms.txt romans.txt ruth.txt acts.txt amos.txt colossians.txt daniel.txt deuteronomy.txt ephesians.txt exodus.txt ezekiel.txt galatians.txt genesis.txt hebrews.txt hosea.txt IChronicles.txt IIChronicles.txt IIcorinthians.txt IIKings.txt IISamuel.txt IKings.txt ISamuel.txt jeremiah.txt job.txt john.txt joshua.txt judges.txt lamentations.txt 
+pr:0.023577 0.062741 0.035362 0.029954 0.003885 0.023741 0.012124 0.037150 0.014404 0.014610 0.010106 0.009108 0.004067 0.023918 0.021402 0.013581 0.019919 0.013155 0.009982 0.037250 0.007839 0.010524 0.026222 0.011355 0.007607 0.010577 0.004642 0.027953 0.006832 0.004961 0.017363 0.035552 0.011256 0.022480 0.018399 
+search:Jerusalem sun God
+pages:luke.txt malachi.txt mark.txt matthew.txt micah.txt nehemiah.txt numbers.txt psalms.txt songOfSongs.txt acts.txt amos.txt daniel.txt deuteronomy.txt ecclesiastes.txt exodus.txt ezekiel.txt hosea.txt IIChronicles.txt IIKings.txt IISamuel.txt ISamuel.txt jeremiah.txt job.txt joel.txt joshua.txt judges.txt 
+pr:0.062741 0.002381 0.035362 0.029954 0.003885 0.002381 0.023741 0.037150 0.010639 0.010106 0.009108 0.023918 0.021402 0.021087 0.019919 0.013155 0.010524 0.011355 0.010577 0.004642 0.006832 0.004961 0.017363 0.013525 0.011256 0.022480 
+search:Jesus death birth
+pages:matthew.txt psalms.txt daniel.txt ecclesiastes.txt ezekiel.txt hosea.txt job.txt 
+pr:0.029954 0.037150 0.023918 0.021087 0.013155 0.010524 0.017363 
+search:moses egypt
+pages:leviticus.txt matthew.txt numbers.txt psalms.txt zechariah.txt acts.txt daniel.txt deuteronomy.txt exodus.txt ezekiel.txt ezra.txt genesis.txt hebrews.txt hosea.txt IChronicles.txt IIChronicles.txt IIKings.txt IISamuel.txt IKings.txt ISamuel.txt jeremiah.txt joshua.txt judges.txt 
+pr:0.023577 0.029954 0.023741 0.037150 0.015811 0.010106 0.023918 0.021402 0.019919 0.013155 0.007034 0.037250 0.007839 0.010524 0.026222 0.011355 0.010577 0.004642 0.027953 0.006832 0.004961 0.011256 0.022480 
+search:fly away 
+pages:proverbs.txt psalms.txt revelation.txt daniel.txt genesis.txt ISamuel.txt jeremiah.txt job.txt 
+pr:0.012124 0.037150 0.021539 0.023918 0.037250 0.006832 0.004961 0.017363 
+search:complex words
+pages:
+pr:
+search:cried end love
+pages:luke.txt mark.txt matthew.txt nehemiah.txt psalms.txt daniel.txt deuteronomy.txt exodus.txt ezekiel.txt genesis.txt hosea.txt IIChronicles.txt IISamuel.txt ISamuel.txt jeremiah.txt john.txt joshua.txt judges.txt 
+pr:0.062741 0.035362 0.029954 0.002381 0.037150 0.023918 0.021402 0.019919 0.013155 0.037250 0.010524 0.011355 0.004642 0.006832 0.004961 0.035552 0.011256 0.022480 
+search:plead forgiveness
+pages:psalms.txt 
+pr:0.037150 
+search:hopes dreams sorrow
+pages:
+pr:
+search:obedience plead
+pages:proverbs.txt psalms.txt ezekiel.txt hosea.txt ISamuel.txt job.txt judges.txt 
+pr:0.012124 0.037150 0.013155 0.010524 0.006832 0.017363 0.022480 
+search:God Hand
+pages:leviticus.txt luke.txt mark.txt matthew.txt micah.txt nehemiah.txt numbers.txt peter.txt proverbs.txt psalms.txt revelation.txt romans.txt ruth.txt songOfSongs.txt zechariah.txt zephaniah.txt acts.txt amos.txt colossians.txt daniel.txt deuteronomy.txt ecclesiastes.txt ephesians.txt exodus.txt ezekiel.txt ezra.txt galatians.txt genesis.txt hebrews.txt hosea.txt IChronicles.txt IIChronicles.txt IIcorinthians.txt IIKings.txt IISamuel.txt IKings.txt ISamuel.txt jeremiah.txt job.txt joel.txt john.txt jonah.txt joshua.txt judges.txt lamentations.txt 
+pr:0.023577 0.062741 0.035362 0.029954 0.003885 0.002381 0.023741 0.032874 0.012124 0.037150 0.021539 0.014404 0.014610 0.010639 0.015811 0.002381 0.010106 0.009108 0.004067 0.023918 0.021402 0.021087 0.013581 0.019919 0.013155 0.007034 0.009982 0.037250 0.007839 0.010524 0.026222 0.011355 0.007607 0.010577 0.004642 0.027953 0.006832 0.004961 0.017363 0.013525 0.035552 0.022816 0.011256 0.022480 0.018399 
+search:killed father
+pages:leviticus.txt luke.txt mark.txt matthew.txt numbers.txt proverbs.txt psalms.txt revelation.txt romans.txt acts.txt exodus.txt genesis.txt IChronicles.txt IIChronicles.txt IIKings.txt IISamuel.txt IKings.txt ISamuel.txt Ithessalonians.txt james.txt 
+pr:0.023577 0.062741 0.035362 0.029954 0.023741 0.012124 0.037150 0.021539 0.014404 0.010106 0.019919 0.037250 0.026222 0.011355 0.010577 0.004642 0.027953 0.006832 0.006284 0.019265 
+search:city babilon
+pages:
+pr:
+search:sons rose again
+pages:luke.txt mark.txt nehemiah.txt numbers.txt psalms.txt ruth.txt songOfSongs.txt acts.txt daniel.txt deuteronomy.txt exodus.txt ezra.txt genesis.txt IIChronicles.txt IIcorinthians.txt IIKings.txt IISamuel.txt IKings.txt ISamuel.txt Ithessalonians.txt jeremiah.txt job.txt john.txt joshua.txt judges.txt lamentations.txt 
+pr:0.062741 0.035362 0.002381 0.023741 0.037150 0.014610 0.010639 0.010106 0.023918 0.021402 0.019919 0.007034 0.037250 0.011355 0.007607 0.010577 0.004642 0.027953 0.006832 0.006284 0.004961 0.017363 0.035552 0.011256 0.022480 0.018399 
+search:heaven sky
+pages:
+pr:
+search:sinful preach
+pages:luke.txt mark.txt romans.txt 
+pr:0.062741 0.035362 0.014404 
+search:guilty way
+pages:mark.txt numbers.txt ezekiel.txt genesis.txt hosea.txt Icorinthians.txt james.txt 
+pr:0.035362 0.023741 0.013155 0.037250 0.010524 0.008527 0.019265 
+search:long sick spirit
+pages:luke.txt mark.txt matthew.txt philippians.txt acts.txt daniel.txt IIChronicles.txt IIKings.txt IISamuel.txt jeremiah.txt john.txt 
+pr:0.062741 0.035362 0.029954 0.005285 0.010106 0.023918 0.011355 0.010577 0.004642 0.004961 0.035552 
+search:angel Satan Job
+pages:
+pr:
+search:garden fruit
+pages:songOfSongs.txt deuteronomy.txt ezekiel.txt genesis.txt hosea.txt IIKings.txt john.txt 
+pr:0.010639 0.021402 0.013155 0.037250 0.010524 0.010577 0.035552 
+search:israel weight
+pages:numbers.txt proverbs.txt zechariah.txt ezra.txt genesis.txt IChronicles.txt IIChronicles.txt IIcorinthians.txt IISamuel.txt IKings.txt ISamuel.txt job.txt judges.txt 
+pr:0.023741 0.012124 0.015811 0.007034 0.037250 0.026222 0.011355 0.007607 0.004642 0.027953 0.006832 0.017363 0.022480 
+search:get together
+pages:leviticus.txt luke.txt mark.txt matthew.txt nehemiah.txt numbers.txt psalms.txt zechariah.txt acts.txt daniel.txt deuteronomy.txt exodus.txt genesis.txt IIChronicles.txt IIKings.txt IISamuel.txt IKings.txt ISamuel.txt jeremiah.txt joshua.txt judges.txt 
+pr:0.023577 0.062741 0.035362 0.029954 0.002381 0.023741 0.037150 0.015811 0.010106 0.023918 0.021402 0.019919 0.037250 0.011355 0.010577 0.004642 0.027953 0.006832 0.004961 0.011256 0.022480 
+search:married heir son
+pages:genesis.txt jeremiah.txt 
+pr:0.037250 0.004961 
+search:cattle bread
+pages:leviticus.txt numbers.txt psalms.txt deuteronomy.txt ecclesiastes.txt exodus.txt ezekiel.txt genesis.txt hosea.txt IChronicles.txt IIChronicles.txt IIKings.txt IKings.txt jeremiah.txt job.txt joshua.txt judges.txt 
+pr:0.023577 0.023741 0.037150 0.021402 0.021087 0.019919 0.013155 0.037250 0.010524 0.026222 0.011355 0.010577 0.027953 0.004961 0.017363 0.011256 0.022480 
+search:here jesus
+pages:luke.txt malachi.txt mark.txt matthew.txt nehemiah.txt numbers.txt peter.txt peter2.txt philemon.txt philippians.txt proverbs.txt psalms.txt revelation.txt romans.txt timothy.txt titus.txt zechariah.txt zephaniah.txt acts.txt amos.txt colossians.txt daniel.txt deuteronomy.txt ecclesiastes.txt ephesians.txt exodus.txt ezekiel.txt ezra.txt galatians.txt genesis.txt hebrews.txt hosea.txt Icorinthians.txt IIcorinthians.txt IIJohn.txt IISamuel.txt IIthessalonians.txt IJohn.txt IKings.txt ISamuel.txt Ithessalonians.txt james.txt job.txt john.txt jonah.txt joshua.txt jude.txt judges.txt 
+pr:0.062741 0.002381 0.035362 0.029954 0.002381 0.023741 0.032874 0.015382 0.005874 0.005285 0.012124 0.037150 0.021539 0.014404 0.019060 0.002381 0.015811 0.002381 0.010106 0.009108 0.004067 0.023918 0.021402 0.021087 0.013581 0.019919 0.013155 0.007034 0.009982 0.037250 0.007839 0.010524 0.008527 0.007607 0.021296 0.004642 0.004642 0.020872 0.027953 0.006832 0.006284 0.019265 0.017363 0.035552 0.022816 0.011256 0.009836 0.022480 
+search:forgive Jesus
+pages:luke.txt mark.txt matthew.txt numbers.txt psalms.txt exodus.txt genesis.txt IIcorinthians.txt IJohn.txt IKings.txt ISamuel.txt joshua.txt 
+pr:0.062741 0.035362 0.029954 0.023741 0.037150 0.019919 0.037250 0.007607 0.020872 0.027953 0.006832 0.011256 

@@ -1,0 +1,63 @@
+leviticus.txt 6 genesis.txt exodus.txt numbers.txt deuteronomy.txt IChronicles.txt IIJohn.txt
+luke.txt 4 matthew.txt mark.txt timothy.txt john.txt
+malachi.txt 4 matthew.txt micah.txt genesis.txt deuteronomy.txt
+mark.txt 5 luke.txt genesis.txt numbers.txt revelation.txt songOfSongs.txt
+matthew.txt 4 nahum.txt exodus.txt numbers.txt deuteronomy.txt
+micah.txt 3 philemon.txt timothy.txt obadiah.txt
+nahum.txt 6 daniel.txt ecclesiastes.txt exodus.txt esther.txt proverbs.txt psalms.txt
+nehemiah.txt 2 colossians.txt deuteronomy.txt
+numbers.txt 3 amos.txt acts.txt romans.txt 
+obadiah.txt 2 peter.txt peter2.txt
+peter.txt 3 psalms.txt luke.txt revelation.txt
+peter2.txt 2 peter.txt ruth.txt
+philemon.txt 5 micah.txt nahum.txt acts.txt deuteronomy.txt Ithessalonians.txt
+philippians.txt 2 songOfSongs.txt timothy.txt
+proverbs.txt 1 peter.txt
+psalms.txt 3 ecclesiastes.txt ephesians.txt zechariah.txt
+revelation.txt 5 luke.txt peter.txt john.txt mark.txt matthew.txt
+romans.txt 2 ezekiel.txt lamentations.txt
+ruth.txt 2 galatians.txt haggai.txt 
+songOfSongs.txt 4 ezra.txt ezekiel.txt IISamuel.txt IIthessalonians.txt
+timothy.txt 3 IJohn.txt IIJohn.txt IKings.txt
+titus.txt 4 ISamuel.txt IChronicles.txt IIChronicles IIIJohn.txt
+zechariah.txt 2 joshua.txt genesis.txt
+zephaniah.txt 3 ephesians.txt daniel.txt colossians.txt
+acts.txt 2 hosea.txt IChronicles.txt
+amos.txt 3 jeremiah.txt IIKings.txt james.txt
+colossians.txt 2 job.txt jonah.txt
+daniel.txt 7 Ithessalonians.txt leviticus.txt obadiah.txt philippians.txt ruth.txt romans.txt zechariah.txt
+deuteronomy.txt 3 judges.txt lamentations.txt jude.txt
+ecclesiastes.txt 2 IIJohn.txt james.txt
+ephesians.txt 3 ecclesiastes.txt deuteronomy.txt hosea.txt
+esther.txt 4 exodus.txt jude.txt IIIJohn.txt galatians.txt
+exodus.txt 3 genesis.txt leviticus.txt numbers.txt
+ezekiel.txt 1 IKings.txt
+ezra.txt 2 IIcorinthians.txt jonah.txt
+galatians.txt 3 IJohn.txt IIKings.txt IIChronicles.txt
+genesis.txt 2 luke.txt daniel.txt
+haggai.txt 2 daniel.txt peter.txt
+hebrews.txt 1 peter2.txt
+hosea.txt 4 Icorinthians.txt IIcorinthians.txt IChronicles.txt IIChronicles.txt
+IChronicles.txt 2 job.txt joel.txt
+IIChronicles.txt 1 jonah.txt
+Icorinthians.txt 2 peter.txt peter2.txt
+IIcorinthians.txt 3 joshua.txt jonah.txt judges.txt
+IIIJohn.txt 3 IJohn.txt IIJohn.txt john.txt
+IIJohn.txt 2 IJohn.txt john.txt
+IIKings.txt 1 IKings.txt
+IISamuel.txt 1 ISamuel.txt
+IIthessalonians.txt 1 thessalonians.txt
+IJohn.txt 3 john.txt luke.txt mark.txt
+IKings.txt 2 judges.txt psalms.txt
+ISamuel.txt 2 proverbs.txt psalms.txt
+Ithessalonians.txt 1 james.txt
+james.txt 3 hebrews.txt proverbs.txt psalms.txt
+jeremiah.txt 2 job.txt exodus.txt
+job.txt 5 ecclesiastes.txt deuteronomy.txt exodus.txt leviticus.txt genesis.txt
+joel.txt 3 revelation.txt lamentations.txt psalms.txt
+john.txt 3 luke.txt mark.txt matthew.txt
+jonah.txt 2 genesis.txt leviticus.txt
+joshua.txt 4 romans.txt philemon.txt ezra.txt ezekiel.txt
+jude.txt 3 IIKings.txt esther.txt ruth.txt
+judges.txt 2 IChronicles.txt luke.txt
+lamentations.txt 4 jonah.txt Icorinthians.txt IChronicles.txt IIChronicles.txt

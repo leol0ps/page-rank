@@ -229,9 +229,10 @@ void print_output(List * result, PTST * a) {
     for (int i = 0; i < count; i++) {
       junt[i].a = & p -> name;
       junt[i].val = get_pagerank(a, junt[i].a, & inutil);
+	  p = p->next;
     }
 	printf("pages:");
-    qsort(junt, count, sizeof(Conj * ), order_conj);
+    //qsort(junt, count, sizeof(Conj), order_conj);
 	for(int i = 0; i < count; i++){
 			printf("%s ",junt[i].a->c);
 	}
