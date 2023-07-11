@@ -203,12 +203,14 @@ typedef struct conj {
 }Conj;
 int order_conj(const void * a,
      const void * b) {
-     Conj * x = * (Conj ** ) a;
-     Conj * y = * (Conj ** ) b;
-     if (x -> val > y -> val)
-       return 1;
-     else if (x -> val < y -> val) {
+     Conj * x =  (Conj * ) a;
+     Conj * y =  (Conj * ) b;
+	 //return (int) x->val - y->val;
+     if (x -> val > y -> val){
        return -1;
+	 }
+     else if (x -> val < y -> val) {
+       return 1;
      } else {
        return strcmp(x -> a -> c, y -> a -> c);
      }
@@ -232,7 +234,7 @@ void print_output(List * result, PTST * a) {
 	  p = p->next;
     }
 	printf("pages:");
-    //qsort(junt, count, sizeof(Conj), order_conj);
+    qsort(junt, count, sizeof(Conj), order_conj);
 	for(int i = 0; i < count; i++){
 			printf("%s ",junt[i].a->c);
 	}
