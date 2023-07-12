@@ -240,7 +240,7 @@ void print_output(List * result, PTST * a) {
 	}
 	printf("\npr:");
     for (int i = 0; i < count; i++) {
-      printf("%0.17lf ", junt[i].val);
+      printf("%lf ", junt[i].val);
     }
 	printf("\n");
 	free(junt);
