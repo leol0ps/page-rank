@@ -133,9 +133,7 @@ PTST* read_graph(char* directory){
 	char path[300] = "";
 	FILE* input;
 	int count = 0;
-	int i = 0;
 	int link_count = 0;
-	char** links = NULL;
 	char* line = NULL;
 	char* word = NULL;
 	char* page_name = NULL;
@@ -182,9 +180,7 @@ PTST* read_graph(char* directory){
 		//free_malloc_string(aux);
 		aux = NULL;
 		page_name = NULL;
-		links = NULL;
 		count = 0;
-		i = 0;		
 	}
 	fclose(input);
 	free(line);

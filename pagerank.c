@@ -133,7 +133,6 @@ void pr_update(PTST* a, String* key,int size){
 		double aux = 0;
 		Dat* s = NULL;
 		double somatorio = 0;
-		int out_j;
 		List* p = b->lin;
 		while(p != NULL){
 			s = search_ptst(a,&p->name);
@@ -156,7 +155,6 @@ void update_ranks(PTST* a, String* pages, int size){
 	}	
 }
 double sum_pr(PTST* a, String* pages,int size){
-	int out;
 	double sum = 0;
 	for(int i = 0 ; i < size; i++ ){
 			Dat* x = search_ptst(a,&pages[i]);
@@ -171,7 +169,6 @@ void calculate_pagerank(PTST* a, String* pages, int size){
 	double constant = 1.0/(double)size;
 	double erro = 1000;
 	double novo = INFINITY;
-	double old = 0;
 	while(erro > E){
 		update_ranks(a,pages,size);
 		novo = sum_pr(a,pages,size);
