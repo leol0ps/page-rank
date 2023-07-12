@@ -14,7 +14,7 @@ TST* read_stop_words(char* directory){
 	char path[300] = "";
 	char* word = NULL;
 	strcat(path,directory);
-	strcat(path,"/stopwords.txt");
+	strcat(path,"stopwords.txt");
 
 	
 	//printf("%s\n", path);
@@ -95,7 +95,7 @@ TST* read_pages(char* directory,TST* stp,int* page_count,String** str_pages){
 	int count_pages = 0;
 	List* temp = NULL;
 	strcat(path,directory);
-	strcat(path,"/index.txt");
+	strcat(path,"index.txt");
 	input = fopen(path,"r");
 	if(input == NULL){
 			printf("sem arquivo index\n");
@@ -103,7 +103,7 @@ TST* read_pages(char* directory,TST* stp,int* page_count,String** str_pages){
 	}
 
 	strcat(pages_path,directory);
-	strcat(pages_path,"/pages");
+	strcat(pages_path,"pages");
 	while((read = getline(&line,&len,input))!= -1){
 		page_name = strtok(line, "\n");
 		arvore = read_one_page(arvore,stp,pages_path,page_name);
@@ -143,7 +143,7 @@ PTST* read_graph(char* directory){
 	ssize_t read = 0;
 	String* aux =  NULL;
 	strcat(path,directory);
-	strcat(path,"/graph.txt");
+	strcat(path,"graph.txt");
 	input = fopen(path,"r");
 	PTST* graph = NULL;
 	if(input == NULL){
@@ -240,7 +240,7 @@ void print_output(List * result, PTST * a) {
 	}
 	printf("\npr:");
     for (int i = 0; i < count; i++) {
-      printf("%lf ", junt[i].val);
+      printf("%0.17lf ", junt[i].val);
     }
 	printf("\n");
 	free(junt);
